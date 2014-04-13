@@ -5,7 +5,7 @@ import android.app.Activity;
 /**
  * Created by Wald on 13.04.2014.
  */
-public class AssertActivity extends AssertComponent<Activity> {
+public class AssertActivity extends AssertComponent<Activity, AssertActivity> {
 
     private AssertActivity(Activity object) {
         super(object);
@@ -14,4 +14,5 @@ public class AssertActivity extends AssertComponent<Activity> {
     public static AssertActivity assertThat(Activity activity){
         return new AssertActivity(activity);
     }
+
 }

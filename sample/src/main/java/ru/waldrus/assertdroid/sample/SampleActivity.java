@@ -21,7 +21,7 @@ public class SampleActivity  extends Activity {
         Intent i = new Intent();
        // junit.framework.Assert.assertSame(i, getIntent());
         AssertDroid.init(this);
-
+        AssertDroid.assertThat(this).notNull();
         //Assert.assertTrue(false);
     }
 

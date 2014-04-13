@@ -5,7 +5,7 @@ import android.view.View;
 /**
  * Created by Wald on 11.04.2014.
  */
-public class AssertView extends AssertComponent<View> {
+public class AssertView extends AssertComponent<View, AssertView> {
 
     private AssertView(View object) {
         super(object);
