@@ -8,7 +8,7 @@ import android.os.Build;
  * Created by Wald on 13.04.2014.
  */
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-public class AssertFragment extends AssertComponent<Fragment, AssertFragment> {
+public class AssertFragment extends AssertComponent<AssertFragment, Fragment> {
 
     private AssertFragment(Fragment fragment){
         super(fragment);

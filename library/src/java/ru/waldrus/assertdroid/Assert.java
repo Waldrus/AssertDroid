@@ -15,7 +15,7 @@ public class Assert {
     protected Assert() {   }
 
     public static void fail(String message) {
-        if (DEBUG || null != HANDLER){
+        if (DEBUG || (null != HANDLER && (HANDLE_LEVEL & HANDLE_NORMAL) > 0)){
             AssertDroidError ae = new AssertDroidError(message);
 
             if (null != HANDLER && ((HANDLE_LEVEL & HANDLE_NORMAL) > 0 || (HANDLE_LEVEL & HANDLE_DEBUG) > 0)){
@@ -29,7 +29,7 @@ public class Assert {
     }
 
     public static void fail() {
-        if (DEBUG || null != HANDLER){
+        if (DEBUG || (null != HANDLER && (HANDLE_LEVEL & HANDLE_NORMAL) > 0)){
             AssertDroidError ae = new AssertDroidError();
 
             if (null != HANDLER && ((HANDLE_LEVEL & HANDLE_NORMAL) > 0 || (HANDLE_LEVEL & HANDLE_DEBUG) > 0)){
