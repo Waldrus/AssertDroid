@@ -14,6 +14,10 @@ public class AssertDroidConfig {
     /* package */ AssertDroidConfig(boolean debug){
         Assert.DEBUG = debug;
     }
+    
+    /* package */ AssertDroidConfig(){
+        
+    }
 
     public AssertDroidConfig setHandleOnDebug(boolean handle){
         if (handle){
