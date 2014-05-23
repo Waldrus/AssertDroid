@@ -2,6 +2,7 @@ package ru.waldrus.assertdroid;
 
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
+import ru.waldrus.assertdroid.handlers.AggregateHandler;
 
 /**
  * Created by Wald on 13.04.2014.
@@ -39,6 +40,20 @@ public class AssertDroidConfig {
 
     public AssertDroidConfig setHandler(Handler handler){
         Assert.HANDLER = handler;
+        return this;
+    }
+    
+    public AssertDroidConfig appendHandler(Handler handler){
+        if (null == Assert.HANDLER){
+            setHandler(handler);
+        } else if (Assert.HANDLER instanceof AggregateHandler){
+            Assert.HANDLER.add(handler);
+        } else {
+            AggregateHandler aggregate = new AggregateHandler();
+            aggregate.add(Assert.HANDLER);
+            aggregate.add(handler);
+            Assert.HANDLER = aggregate;
+        }
         return this;
     }
 }
